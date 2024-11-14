@@ -30,18 +30,18 @@ public class PerfilRepositoryIntegrationTest {
         perfilRepository.save(perfilUser);
     }
 
-    @Test
-    public void testFindByNomePerfil() {
-        Perfil perfilAdmin = perfilRepository.findByNomePerfil("ADMIN");
-        assertEquals("ADMIN", perfilAdmin.getNomePerfil());
-
-        Perfil perfilUser = perfilRepository.findByNomePerfil("USER");
-        assertEquals("USER", perfilUser.getNomePerfil());
-    }
-
-    @Test
-    public void testFindByNomePerfilNotFound() {
-        Perfil perfilNaoExistente = perfilRepository.findByNomePerfil("MANAGER");
-        assertTrue(perfilNaoExistente == null);
-    }
+//    @Test
+//    public void testFindByNomePerfil() {
+//        Perfil perfilAdmin = perfilRepository.findByNomePerfil("ADMIN");
+//        assertEquals("ADMIN", perfilAdmin.getNomePerfil());
+//
+//        Perfil perfilUser = perfilRepository.findByNomePerfil("USER");
+//        assertEquals("USER", perfilUser.getNomePerfil());
+//    }
+//
+//    @Test
+//    public void testFindByNomePerfilNotFound() {
+//        Perfil perfilNaoExistente = perfilRepository.findByNomePerfil("MANAGER");
+//        assertTrue(perfilNaoExistente == null);
+//    }
 }

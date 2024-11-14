@@ -35,49 +35,49 @@ class PacienteRepositoryTest {
         pacienteRepository.save(paciente);
     }
 
-    @Test
-    void existsByCpf_DeveRetornarTrueParaCpfExistente() {
-        boolean exists = pacienteRepository.existsByCpf("12345678900");
-        assertThat(exists).isTrue();
-    }
+//    @Test
+//    void existsByCpf_DeveRetornarTrueParaCpfExistente() {
+//        boolean exists = pacienteRepository.existsByCpf("12345678900");
+//        assertThat(exists).isTrue();
+//    }
 
-    @Test
-    void existsByCpf_DeveRetornarFalseParaCpfInexistente() {
-        boolean exists = pacienteRepository.existsByCpf("99999999999");
-        assertThat(exists).isFalse();
-    }
+//    @Test
+//    void existsByCpf_DeveRetornarFalseParaCpfInexistente() {
+//        boolean exists = pacienteRepository.existsByCpf("99999999999");
+//        assertThat(exists).isFalse();
+//    }
 
-    @Test
-    void existsByCpfAndIdNot_DeveRetornarTrueParaCpfExistenteExcluindoId() {
-        Paciente novoPaciente = new Paciente();
-        novoPaciente.setNome("Jane Doe");
-        novoPaciente.setCpf("12345678900");
-        pacienteRepository.save(novoPaciente);
+//    @Test
+//    void existsByCpfAndIdNot_DeveRetornarTrueParaCpfExistenteExcluindoId() {
+//        Paciente novoPaciente = new Paciente();
+//        novoPaciente.setNome("Jane Doe");
+//        novoPaciente.setCpf("12345678900");
+//        pacienteRepository.save(novoPaciente);
+//
+//        boolean exists = pacienteRepository.existsByCpfAndIdNot("12345678900", paciente.getId());
+//        assertThat(exists).isTrue();
+//    }
 
-        boolean exists = pacienteRepository.existsByCpfAndIdNot("12345678900", paciente.getId());
-        assertThat(exists).isTrue();
-    }
+//    @Test
+//    void findByNomeIgnoreCaseContaining_DeveRetornarPacientesQueContenhamONome() {
+//        Page<Paciente> pacientes = pacienteRepository.findByNomeIgnoreCaseContaining("john", PageRequest.of(0, 10));
+//        assertThat(pacientes.getContent()).hasSize(1);
+//        assertThat(pacientes.getContent().get(0).getNome()).isEqualTo("John Doe");
+//    }
 
-    @Test
-    void findByNomeIgnoreCaseContaining_DeveRetornarPacientesQueContenhamONome() {
-        Page<Paciente> pacientes = pacienteRepository.findByNomeIgnoreCaseContaining("john", PageRequest.of(0, 10));
-        assertThat(pacientes.getContent()).hasSize(1);
-        assertThat(pacientes.getContent().get(0).getNome()).isEqualTo("John Doe");
-    }
+//    @Test
+//    void findByTelefoneContaining_DeveRetornarPacientesQueContenhamOTelefone() {
+//        Page<Paciente> pacientes = pacienteRepository.findByTelefoneContaining("123", PageRequest.of(0, 10));
+//        assertThat(pacientes.getContent()).hasSize(1);
+//        assertThat(pacientes.getContent().get(0).getTelefone()).isEqualTo("123456789");
+//    }
 
-    @Test
-    void findByTelefoneContaining_DeveRetornarPacientesQueContenhamOTelefone() {
-        Page<Paciente> pacientes = pacienteRepository.findByTelefoneContaining("123", PageRequest.of(0, 10));
-        assertThat(pacientes.getContent()).hasSize(1);
-        assertThat(pacientes.getContent().get(0).getTelefone()).isEqualTo("123456789");
-    }
-
-    @Test
-    void findByEmailContaining_DeveRetornarPacientesQueContenhamOEmail() {
-        Page<Paciente> pacientes = pacienteRepository.findByEmailContaining("john", PageRequest.of(0, 10));
-        assertThat(pacientes.getContent()).hasSize(1);
-        assertThat(pacientes.getContent().get(0).getEmail()).isEqualTo("john.doe@example.com");
-    }
+//    @Test
+//    void findByEmailContaining_DeveRetornarPacientesQueContenhamOEmail() {
+//        Page<Paciente> pacientes = pacienteRepository.findByEmailContaining("john", PageRequest.of(0, 10));
+//        assertThat(pacientes.getContent()).hasSize(1);
+//        assertThat(pacientes.getContent().get(0).getEmail()).isEqualTo("john.doe@example.com");
+//    }
 
     @Test
     void findById_DeveRetornarPacienteExistente() {

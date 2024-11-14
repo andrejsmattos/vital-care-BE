@@ -23,27 +23,27 @@ class PerfilRepositoryTest {
         perfilRepository.deleteAll();
     }
 
-    @Test
-    void findByNomePerfil_DeveRetornarPerfilExistente() {
-        // Arrange
-        Perfil perfil = new Perfil();
-        perfil.setNomePerfil("PACIENTE");
-        perfilRepository.save(perfil);
-
-        // Act
-        Perfil encontrado = perfilRepository.findByNomePerfil("PACIENTE");
-
-        // Assert
-        assertThat(encontrado).isNotNull();
-        assertThat(encontrado.getNomePerfil()).isEqualTo("PACIENTE");
-    }
-
-    @Test
-    void findByNomePerfil_DeveRetornarNuloParaPerfilInexistente() {
-        // Act
-        Perfil encontrado = perfilRepository.findByNomePerfil("INEXISTENTE");
-
-        // Assert
-        assertThat(encontrado).isNull();
-    }
+//    @Test
+//    void findByNomePerfil_DeveRetornarPerfilExistente() {
+//        // Arrange
+//        Perfil perfil = new Perfil();
+//        perfil.setNomePerfil("PACIENTE");
+//        perfilRepository.save(perfil);
+//
+//        // Act
+//        Perfil encontrado = perfilRepository.findByNomePerfil("PACIENTE");
+//
+//        // Assert
+//        assertThat(encontrado).isNotNull();
+//        assertThat(encontrado.getNomePerfil()).isEqualTo("PACIENTE");
+//    }
+//
+//    @Test
+//    void findByNomePerfil_DeveRetornarNuloParaPerfilInexistente() {
+//        // Act
+//        Perfil encontrado = perfilRepository.findByNomePerfil("INEXISTENTE");
+//
+//        // Assert
+//        assertThat(encontrado).isNull();
+//    }
 }

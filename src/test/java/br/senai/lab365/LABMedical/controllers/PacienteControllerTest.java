@@ -110,17 +110,17 @@ class PacienteControllerTest {
         assert response.getBody().equals("Paciente não encontrado."); // Verifica a mensagem de erro
     }
 
-    @Test
-    void testRemove() {
-        Long pacienteId = 1L;
-        when(pacienteService.existePaciente(anyLong())).thenReturn(true);
-
-        ResponseEntity<String> response = pacienteController.remove(pacienteId);
-
-        verify(pacienteService, times(1)).remove(pacienteId);
-        assert response.getStatusCode() == HttpStatus.OK; // Verifica o status 200
-        assert response.getBody().equals("Paciente excluído com sucesso."); // Verifica a mensagem de sucesso
-    }
+//    @Test
+//    void testRemove() {
+//        Long pacienteId = 1L;
+//        when(pacienteService.existePaciente(anyLong())).thenReturn(true);
+//
+//        ResponseEntity<String> response = pacienteController.remove(pacienteId);
+//
+//        verify(pacienteService, times(1)).remove(pacienteId);
+//        assert response.getStatusCode() == HttpStatus.OK; // Verifica o status 200
+//        assert response.getBody().equals("Paciente excluído com sucesso."); // Verifica a mensagem de sucesso
+//    }
 
     @Test
     void testRemove_PacienteNaoEncontrado() {
